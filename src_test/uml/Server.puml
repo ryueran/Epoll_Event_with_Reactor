@@ -1,0 +1,14 @@
+@startuml Server
+class Server {
+    __ public __
+    void newConnection(int)
+    void readData(int)
+    void writeData(int)
+    void start()
+    __ private __
+    Reactor* reactor_
+    Acceptor* acceptor_
+    Event_Handler* handler_
+    int fd_
+}
+@enduml

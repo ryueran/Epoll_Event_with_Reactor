@@ -1,0 +1,14 @@
+@startuml Epoller
+class Epoller {
+    __ public __
+    void add_Handler()
+    void remove_Handler()
+    void Epoll_Wait()
+    __ private __
+    std::map<int, Event_Handler*> handlerMap_
+    int epoll_fd_
+    std::vector<epoll_event> event_list_
+    void update_(int operation, Event_Handler *eh)
+    void fill_Handlers_(std::vector<Event_Handler*>* activeHandlers, int nums)
+}
+@enduml

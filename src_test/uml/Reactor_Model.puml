@@ -1,0 +1,29 @@
+@startuml Reactor_Model
+class Reactor {
+    handle_events()
+    register_handler(h)
+    remove_handler(h)
+}
+
+note right of Reactor::"handle_events()"
+    Epoller.Epoll_wait(handlers);
+    foreach h in handlers loop
+        h.handle_event(type)
+end note
+
+class Event_Handler {
+    handle_event(type)
+    get_handle()
+}
+
+class Epoller {
+    Epoll_wait()
+}
+
+interface Handle
+
+Reactor -down-> Event_Handler : handlers
+Reactor -left-> Epoller : uses
+Epoller -down-> Handle: notifies
+Event_Handler -left->Handle: owns
+@enduml

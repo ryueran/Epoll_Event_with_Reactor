@@ -1,0 +1,13 @@
+@startuml Acceptor
+class Acceptor {
+    __ public __
+    void Accept(int)
+    void listen_func(int, int)
+    void setnewConnectionCallback(std::function<void(int)>);
+    __ private __
+    int fd_
+    Reactor* reactor
+    std::function<void(int)> newConnectionCallback_
+    Event_Handler *acceptor_Handler_
+}
+@enduml

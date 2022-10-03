@@ -1,0 +1,10 @@
+@startuml Reactor
+class Reactor {
+    __ public __
+    void handle_events()
+    void register_handler(Event_Handler *)
+    void remove_handler(Event_Handler *)
+    __ private __
+    Epoller* poller_
+}
+@enduml

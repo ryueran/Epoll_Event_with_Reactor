@@ -1,0 +1,22 @@
+[
+{
+  "directory": "/home/muzi/Training/EventLoop/build",
+  "command": "/bin/g++-9   -I/home/muzi/Training/EventLoop/src_test -I/home/muzi/Training/EventLoop/Threads::Threads  -g   -o CMakeFiles/Event_test.dir/src_test/main.cpp.o -c /home/muzi/Training/EventLoop/src_test/main.cpp",
+  "file": "/home/muzi/Training/EventLoop/src_test/main.cpp"
+},
+{
+  "directory": "/home/muzi/Training/EventLoop/build",
+  "command": "/bin/g++-9   -I/home/muzi/Training/EventLoop/src_test -I/home/muzi/Training/EventLoop/Threads::Threads  -g   -o CMakeFiles/Event_test.dir/src_test/Epoller.cpp.o -c /home/muzi/Training/EventLoop/src_test/Epoller.cpp",
+  "file": "/home/muzi/Training/EventLoop/src_test/Epoller.cpp"
+},
+{
+  "directory": "/home/muzi/Training/EventLoop/build",
+  "command": "/bin/g++-9   -I/home/muzi/Training/EventLoop/src_test -I/home/muzi/Training/EventLoop/Threads::Threads  -g   -o CMakeFiles/Event_test.dir/src_test/Event_Handler.cpp.o -c /home/muzi/Training/EventLoop/src_test/Event_Handler.cpp",
+  "file": "/home/muzi/Training/EventLoop/src_test/Event_Handler.cpp"
+},
+{
+  "directory": "/home/muzi/Training/EventLoop/build",
+  "command": "/bin/g++-9   -I/home/muzi/Training/EventLoop/src_test -I/home/muzi/Training/EventLoop/Threads::Threads  -g   -o CMakeFiles/Event_test.dir/src_test/Reactor.cpp.o -c /home/muzi/Training/EventLoop/src_test/Reactor.cpp",
+  "file": "/home/muzi/Training/EventLoop/src_test/Reactor.cpp"
+}
+]

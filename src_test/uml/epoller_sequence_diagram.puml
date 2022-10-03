@@ -1,0 +1,43 @@
+@startuml epoller_sequence_diagram
+participant Client
+participant Server
+participant Acceptor
+participant Reactor
+participant Epoller
+participant Event_Handler
+Server -> Server: bind()
+Server -> Acceptor: listen()
+Acceptor -> Event_Handler: set_read_actor(Acceptor::Accept)
+Event_Handler -> Event_Handler: enableReading()
+Event_Handler -> Event_Handler: update()
+Event_Handler -> Reactor: register_handler()
+Reactor -> Epoller: add_Handler()
+Epoller -> Event_Handler: set_status()
+Server -> Server: start()
+Reactor -> Reactor: handle_events()
+Reactor -> Epoller: Epoll_wait()
+Epoller -> Epoller: fill_Handlers_()
+Epoller -> Event_Handler: set_event_type()
+Reactor -> Event_Handler: handle_event()
+alt EPOLLIN case
+    Event_Handler -> Event_Handler: read_actor
+else EPOLLOUT case 
+    Event_Handler -> Event_Handler: write_actor
+end
+Client -> Server: new connection request
+Server -> Acceptor: Accept()
+Server -> Event_Handler: set_read_actor(Server::read)
+Event_Handler -> Event_Handler: enableWriting()
+Event_Handler -> Event_Handler: update()
+Event_Handler -> Reactor: register_handler()
+Client -> Server: write request
+Server -> Server: read()
+Server -> Event_Handler: set_write_actor(Server::write)
+Event_Handler -> Event_Handler: enableReading()
+Event_Handler -> Event_Handler: update()
+Event_Handler -> Reactor: register_handler()
+Server -> Server: write()
+Event_Handler -> Event_Handler: enableReading()
+Event_Handler -> Event_Handler: update()
+
+@enduml

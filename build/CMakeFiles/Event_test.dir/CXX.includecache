@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/muzi/Training/EventLoop/src_test/Event_Handler.cpp
+iostream
+-
+Event_Handler.h
+/home/muzi/Training/EventLoop/src_test/Event_Handler.h
+Reactor.h
+/home/muzi/Training/EventLoop/src_test/Reactor.h
+
+/home/muzi/Training/EventLoop/src_test/Event_Handler.h
+iostream
+-
+functional
+-
+thread
+-
+sys/epoll.h
+-
+
+/home/muzi/Training/EventLoop/src_test/Reactor.h
+iostream
+-
+vector
+-
+algorithm
+-
+thread
+-
+memory
+-
+

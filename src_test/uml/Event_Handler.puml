@@ -1,0 +1,22 @@
+@startuml Event_Handler
+class Event_Handler {
+    __ public __
+    void set_event_type(int)
+    void set_read_actor(std::function<void(int)> )
+    void set_write_actor(std::function<void(int)> )
+    void update()
+    void remove()
+    void enableReading()
+    void enableWriting()
+    void set_status(event_status status)
+    __ private __
+    std::function<void(int)> read_actor_
+    std::function<void(int)> write_actor_
+    uint32_t type_
+    uint32_t r_type_
+    event_status e_status_
+    int fd_
+    Reactor *loop_
+    char buff_[MAX_BUFFLEN_]
+}
+@enduml
